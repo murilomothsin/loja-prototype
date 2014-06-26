@@ -8,8 +8,10 @@ public class MotorolaPrototype extends CelularPrototype {
     	valor = 0.0;
     }
     
-    public boolean equals(Object o){
+    public boolean equals(CelularPrototype o){
+    	System.out.println( "here 1" );
     	if(o instanceof MotorolaPrototype){
+    		System.out.println( "here 2" );
     		if(((MotorolaPrototype) o).exibirInfo() == this.exibirInfo()){
     			return true;
     		}

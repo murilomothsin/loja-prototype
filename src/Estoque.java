@@ -12,17 +12,21 @@ public class Estoque {
 		novo.setModelo(modelo);
 		if(!celulares.contains(novo)){
 			celulares.add(novo);
-			System.out.println("Item adicionado ao estoque!");
-		}
-		else
-			System.out.println("Item j� existe no estoque!");
+			System.out.println("Item adicionado ao estoque!asd");
+		}else
+			System.out.println("Item ja existe no estoque!");
 	}
 	
 	public void addItem (CelularPrototype marca, String modelo, double valor) {
 		CelularPrototype novo = marca.clonar();
 		novo.setModelo(modelo);
 		novo.setValor(valor);
-		celulares.add(novo);
+		if(!celulares.contains(novo)){
+			celulares.add(novo);
+			System.out.println("Item adicionado ao estoque!asd");
+		}else
+			System.out.println("Item ja existe no estoque!");
+		
 	}
 	
 	public int totalItens () {
@@ -31,6 +35,14 @@ public class Estoque {
 	
 	public int posicao (CelularPrototype celular) {
 		return celulares.indexOf(celular);
+	}
+	
+	public String pesquisar(String modelo) {
+		for(CelularPrototype c : celulares) {
+			if(c.getModelo() == modelo)
+				return "Posição: " + celulares.indexOf(c) + "\n" + c.exibirInfo();
+		}
+		return "Modelo não encontrado";
 	}
 	
 	public void imprimirEstoque () {

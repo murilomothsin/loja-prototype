@@ -6,6 +6,10 @@ public abstract class CelularPrototype {
     public abstract String exibirInfo();
  
     public abstract CelularPrototype clonar();
+    
+    public int hashCode() { 
+    	return exibirInfo().hashCode();
+    }
  
     public double getValor() {
         return valor;

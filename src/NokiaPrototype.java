@@ -8,7 +8,8 @@ public class NokiaPrototype extends CelularPrototype {
     	valor = 0.0;
     }
     
-    public boolean equals(Object o){
+    public boolean equals(CelularPrototype o){
+    	System.out.println( "here 1" );
     	if(o instanceof NokiaPrototype){
     		if(((NokiaPrototype) o).exibirInfo() == this.exibirInfo()){
     			return true;
