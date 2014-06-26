@@ -9,9 +9,8 @@ public class NokiaPrototype extends CelularPrototype {
     }
     
     public boolean equals(CelularPrototype o){
-    	System.out.println( "here 1" );
     	if(o instanceof NokiaPrototype){
-    		if(((NokiaPrototype) o).exibirInfo() == this.exibirInfo()){
+    		if(((MotorolaPrototype) o).getModelo().equalsIgnoreCase(this.getModelo()) && ((MotorolaPrototype) o).getValor() == this.getValor()){
     			return true;
     		}
     	}
@@ -20,7 +19,8 @@ public class NokiaPrototype extends CelularPrototype {
  
     @Override
     public String exibirInfo() {
-        return "Marca: Nokia \n" +
+        return "Código: "+ getCodigo() +
+        		"\nMarca: Nokia \n" +
         		"Modelo: " +
         		getModelo() +
         		"\nValor: R$" +
